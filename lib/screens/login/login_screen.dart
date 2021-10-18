@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payflow/screens/login/login_controller.dart';
 import 'package:payflow/screens/login/widgets/social_login_button.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
@@ -9,6 +10,7 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final LoginController controller = LoginController();
     final avaliableHeight = MediaQuery.of(context).size.height;
     final avaliableWidth = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -67,12 +69,16 @@ class LoginScreen extends StatelessWidget {
                             'Organize seus boletos em um só lugar',
                             style: TextStyles.titleHome,
                             textAlign: TextAlign.center,
+                            softWrap: true,
+                            overflow: TextOverflow.visible,
                           ),
                         ),
                         Container(
                           width: constraints.maxWidth * 0.8,
                           height: constraints.maxHeight * 0.4,
-                          child: SocialLoginButton(),
+                          child: SocialLoginButton(
+                            onTap: controller.googleSignin,
+                          ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                           ),

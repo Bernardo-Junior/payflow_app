@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
 import 'package:payflow/shared/themes/app_text_styles.dart';
 
 class SocialLoginButton extends StatelessWidget {
-  const SocialLoginButton({Key? key}) : super(key: key);
+  Future<void> Function() onTap;
+  SocialLoginButton({required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +18,7 @@ class SocialLoginButton extends StatelessWidget {
             bottom: constraints.maxHeight * 0.3,
           ),
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: Container(
               decoration: BoxDecoration(
                 border: Border.fromBorderSide(
