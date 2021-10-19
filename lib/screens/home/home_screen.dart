@@ -77,8 +77,9 @@ class _HomeScreenState extends State<HomeScreen> {
             GestureDetector(
               onTap: () {
                 homeController.setPage(1);
-                print("OI");
                 setState(() {});
+
+                Navigator.pushNamed(context, '/barcode_scanner');
               },
               child: Container(
                 width: 56,
