@@ -77,7 +77,7 @@ class LoginScreen extends StatelessWidget {
                           width: constraints.maxWidth * 0.8,
                           height: constraints.maxHeight * 0.4,
                           child: SocialLoginButton(
-                            onTap: controller.googleSignin,
+                            onTap: () => controller.googleSignin(context),
                           ),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),

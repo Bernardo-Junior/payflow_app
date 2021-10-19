@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:payflow/shared/themes/app_colors.dart';
 import 'package:payflow/shared/themes/app_images.dart';
+import 'package:payflow/shared/themes/auth/auth_controller.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -9,6 +10,8 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final avaliableHeight = MediaQuery.of(context).size.height;
     final avaliableWidth = MediaQuery.of(context).size.width;
+    final authController = AuthController();
+    authController.currentUser(context);
 
     return Scaffold(
       backgroundColor: AppColors.background,
